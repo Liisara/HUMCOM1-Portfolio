@@ -1,0 +1,18 @@
+.Winter {color: red;
+    font-family: Arial;
+    text-decoration: underline;}
+.Topics {color: red;
+    font-family: Arial}
+header {font-weight: bold;
+    color: red;
+   font-size: 20px;
+   }
+body {background-color: beige;}
+.underline {text-decoration: underline;}
+.italic {font-style: italic;}
+.green {color: green;}
+.blue {color: blue;}
+.orange {color: orange;}
+.purple {color: purple;}
+.brown {color: brown;}
+.reddish {color: rgb(245, 54, 54);}
