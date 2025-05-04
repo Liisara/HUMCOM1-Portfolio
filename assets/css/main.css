@@ -703,7 +703,7 @@ section,
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: green; /* red */
+  background-color: var(--accent-color); /* Ensure visibility in light mode */
 }
 
 /*--------------------------------------------------------------
@@ -1260,4 +1260,106 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+}
+
+.dark-mode-toggle button {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.dark-mode-toggle button:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  --background-color: #151515;
+  --default-color: #e0e0e0;
+  --heading-color: #ffffff;
+  --accent-color: #bb86fc;
+  --surface-color: #1e1e1e;
+  --contrast-color: #ffffff; /* Updated to ensure visibility */
+}
+
+body.dark-mode a {
+  color: var(--accent-color);
+}
+
+body.dark-mode a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
+body.dark-mode .skills,
+body.dark-mode .portfolio {
+  background-color: var(--background-color);
+  color: var(--default-color);
+}
+
+body.dark-mode .skills .progress-bar,
+body.dark-mode .portfolio .portfolio-info {
+  background-color: var(--surface-color);
+}
+
+body.dark-mode .skills .progress-bar-wrap,
+body.dark-mode .portfolio .portfolio-filters li {
+  background-color: var(--surface-color);
+  color: var(--default-color);
+}
+
+body.dark-mode .portfolio .portfolio-filters li.filter-active {
+  color: var(--accent-color);
+}
+
+body.dark-mode .skills .progress-bar {
+  background-color: var(--accent-color); /* Ensure visibility in dark mode */
+}
+
+/* Light Mode Adjustments */
+body {
+  --background-color: #ffffff;
+  --default-color: #272829;
+  --heading-color: #050d18;
+  --accent-color: #149ddd;
+  --surface-color: #f4fafd; /* Slightly adjusted for better contrast */
+  --contrast-color: #000000; /* Updated to ensure visibility */
+}
+
+.skills,
+.portfolio {
+  background-color: var(--background-color);
+  color: var(--default-color);
+}
+
+.skills .progress-bar,
+.portfolio .portfolio-info {
+  background-color: var(--surface-color);
+}
+
+.skills .progress-bar-wrap,
+.portfolio .portfolio-filters li {
+  background-color: var(--surface-color);
+  color: var(--default-color);
+}
+
+.portfolio .portfolio-filters li.filter-active {
+  color: var(--accent-color);
+}
+
+.skills .progress-bar {
+  background-color: var(--accent-color); /* Ensure visibility in light mode */
 }
