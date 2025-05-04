@@ -226,4 +226,26 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const darkModeToggle = document.getElementById("darkModeToggle");
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+    // Initialize theme based on user preference or system settings
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme === "dark" || (!currentTheme && prefersDarkScheme.matches)) {
+      document.body.classList.add("dark-mode");
+    }
+
+    darkModeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+
+      // Update navbar and sections
+      document.querySelectorAll('.navbar, section').forEach(element => {
+        element.classList.toggle('dark-mode');
+      });
+    });
+  });
+
 })();
